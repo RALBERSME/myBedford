@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background-image: url(Images/booktower.jpg);
+  background-position: -30% 100%;
+}
+.container {
+  margin: 15px 10px;
+  padding: 15px;
+  font-size: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  position: relative;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(212, 237, 238, 0.95),
+    rgb(236, 218, 159)
+  );
+  border-radius: 10px;
+
+  box-shadow: 2px 2px 2px 3px rgb(236, 218, 159);
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.8rem;
+  word-wrap: break-word;
+}
+
+hr {
+  border: none;
+  border-top: 3px dotted black;
+}
+
+a {
+  margin: 15px 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #03599b;
+  padding: 12px 20px;
+  border: 2px solid #383737;
+  max-width: 100%;
+  box-sizing: border-box;
+  transform: skewX(-20deg);
+}
+a:hover {
+  background-color: #d9861b;
+  color: white;
+}
+
+a * {
+  display: inline-block;
+  transform: skewX(20deg);
+}
+
+.jump a {
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.up a {
+  padding: 8px 12px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 5% 25%;
+    padding: 3.5%;
+    font-size: 1.2rem;
+    border-width: 5px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  hr {
+    border-top-width: 5px;
+  }
+
+  a {
+    padding: 10px 25px;
+  }
+
+  .jump a,
+  .up a {
+    padding: 5px 10px;
+  }
+}
