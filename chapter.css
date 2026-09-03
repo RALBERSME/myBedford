@@ -33,6 +33,8 @@ h1 {
 hr {
   border: none;
   border-top: 3px dotted black;
+  width: 30%;
+  margin-left: 35%;
 }
 
 a {

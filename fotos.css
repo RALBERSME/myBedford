@@ -16,8 +16,8 @@ body {
 .book {
   margin-top: 12vh;
   position: relative;
-  width: 56vh;
-  height: 80vh;
+  width: 28vh;
+  height: 40vh;
   transition: transform 0.5s;
 }
 
@@ -48,7 +48,7 @@ h1 {
 .front {
   z-index: 1;
   backface-visibility: hidden;
-  border-left: 3px solid #fcf4e9;
+  border-left: 1px solid #fcf4e9;
 }
 
 .back {
@@ -187,6 +187,7 @@ i {
   color: orangered;
   font-weight: 600;
 }
+
 .info {
   position: absolute;
   top: 45.5%;
@@ -208,5 +209,19 @@ i {
   }
   100% {
     left: 5%;
+  }
+}
+@media (max-width: 968px) {
+  .info {
+    display: none;
+  }
+}
+@media (min-width: 968px) {
+  .book {
+    margin-top: 12vh;
+    position: relative;
+    width: 56vh;
+    height: 80vh;
+    transition: transform 0.5s;
   }
 }
