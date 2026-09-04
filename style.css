@@ -20,6 +20,8 @@ body {
 }
 h4 {
   font-size: 1.275rem;
+  text-align: justify;
+  hyphens: auto;
 }
 .split {
   gap: 50px;
