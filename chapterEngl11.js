@@ -1,0 +1,49 @@
+let utterance = null;
+
+function starteVorlesen() {
+  window.speechSynthesis.cancel();
+
+  const text =
+    "The small metal canister weighed heavily in Clark’s hand. It was a damn cuckoo’s egg. He couldn’t go anywhere with it in Bedford; it was simply too dangerous. The photo dealer at the market square would narrow his eyes, ask questions, maybe even call the police if the prints revealed something abhorrent. Clark placed the canister on the worn veneer of his nightstand. The metal clinked softly against the alarm clock. He had to go back to Luton. Only there could he find people who kept their mouths shut and knew their trade. The next morning, a sharp ache of soreness bit into his calves. It was half past six when the diesel engine of the United Counties bus droned sluggishly in the gray haze of the bus stop. Clark sat by the window, his forehead pressed against the vibrating pane. Before long, the trees along the A6 were passing him by. By eight o’clock, he was already standing in Luton outside the familiar wooden door of his friend's house. A heavy, black cast-iron ring served as a knocker. He pulled it. Inside, things rattled, and shortly after, a man whose hair looked like washed-out wool opened the door. It was Richard. “Clark!” A broad grin dug deep furrows into Richard’s weather-beaten cheeks. “Wow, it really is you. I thought you’d fallen in love with your fancy Bedford ages ago. Don't tell me you don't like it there anymore?” He gave Clark a hearty slap on the shoulder and stepped aside. Come on in, out of the fog. The kitchen was tiny. A gas stove hissed away. Richard was busy with a battered pot, setting on some coffee. Richard, Clark managed to squeeze out. His voice sounded pleading. He stood rigid in the doorway. Richard, I don't have time for small talk. I need you. The old man stopped mid-motion. He turned around slowly. His eyes narrowed into slits. Well now, Clark? Usually you beat around the bush for weeks. Your house must be well and truly on fire. Sit down, catch your breath, and then spit it out. Clark sank onto the hard wooden chair. His knees were trembling. Richard sat opposite him, his elbows propped on the table. As Clark rattled off Edgar’s horror story, the expression on Richard’s face shifted. He merely nodded heavily. At the end, Clark slid the film across the tabletop. Can you develop it? Right now? Richard didn’t answer. He took the canister, his fingers closing tightly around it. Without uttering a word, he turned around and headed for the cellar stairs. He had read this morning's paper: Eyleen Newland’s son was the front-page story. Murder was no joke in England; it carried the noose. The justice system didn’t mess around. He also knew that the judges rushed such trials through at a murderous pace to let the power of the state prevail. Doing their duty was far more important to them than any form of mercy. In Richard’s mind, the old files from his time as a social worker began to rattle. How often had he fought in court for the lives of terrified boys? Sometimes he hadn't been able to pull his protégés' necks out of the noose. The rope had been faster. But his compass was the same as Clark's. Right was right. A real murderer belonged on the gallows, but an innocent victim deserved every damn fight. In truth, Richard had always been the fiercer beast of the two. Back then, when he was still in service. Clark had often crept to him, pale and with sweaty palms, because his courage had failed him at the crucial moment. Then Richard would snatch the files away and ram the tough cases through on the final stretch. Don’t worry, Clark, Richard muttered as he went down. The stair steps creaked. He slid the bolt across, turned off the overhead light, and switched on the red darkroom lamp. Just because I’m drawing a pension doesn’t mean I’m dead yet, he called through the door. The red light cast long shadows on the damp cellar walls. There was a pungent smell of acetic acid and sodium thiosulfate. Richard waited until his eyes adjusted to the glow. A single mistake in the next few minutes, and the images on the strip of film would be lost forever. He felt for the clunky developing tank. Then he switched off the light. Absolute blackness enveloped him. Flying blind, he cracked open the film canister and pulled out the strip of celluloid. With the precision of hundreds of repetitions, he slid it into the fine grooves of the developing reel. He let the reel slide into the tank, screwed the lid tight, and breathed a sigh of relief. Now the room light could be turned back on. Richard checked the thermometer in the brown bottle. It read exactly 20 degrees Celsius. That was perfect. With a steady hand, he poured the developer into the tank and set the timer for ten minutes. The monotonous, gurgling sound of the liquid calmed him. Inside, the miracle was happening: the invisible image was turning into metallic silver. After ten minutes, he poured the developer back, filled in the stop bath, and immediately followed it with the fixer. For five minutes, he agitated the tank until the film was permanently light-fast. Richard rinsed the chemicals out with cold water and opened the lid. Using a wooden clip, he pulled out the wet, deep-brown strip and held it up against the bare light bulb. A smile crept onto his face. The contours were tack-sharp; the negative was a perfect success. He hung the strip on a line to dry and watched as the drops of water slowly slid to the floor. He let out his breath. His fingers were shaking slightly, his joints aching from the cold in the cellar, but he hadn't lost his touch. Now for the paper. He turned the red light back on, inserted the first negative, and projected the image onto the white card for eight seconds. The paper slid into the developer. Contours ate their way through the white. Stop bath. Fixer on top, then it was done. He hung up the first wet print. The image hit him like a blow. He swore softly. Two figures stood in a clearing, surrounded by dense foliage. In the first three prints, a dark-haired man was handing a thick, white envelope to another. The second man wore a light-colored duffle coat, the hood pulled so low over his face that only a shadow remained. In the next photo, the hooded man was pulling thick wads of cash out of the envelope and seemed to be counting them. His fingers looked greedy. Then he drew a stack of documents from his coat pocket. Damn it, Richard hissed. The fourth image was almost black. He held it directly under the light bulb until his eyes, amid the deep slurry of gray tones, recognized the needles of dense pine greens. Underexposed. Next. The next photo was sharp again. The hooded man handed the dark-haired man a small, stocky key. After that, their paths diverged; in the following print, the dark-haired man was visible only as a tiny speck between the tree trunks. The last picture was absurd: a wild boar staring startled out of a bush. The photographer must have been distracted by the animal and hit the shutter. Richard clattered up the cellar stairs and tossed the still-damp papers onto the kitchen table. You were right, Clark. This isn't ordinary stuff. There's some big business going down. Documents, a key, a pile of cash. In the middle of nowhere, where they felt safe. And that foolish gamekeeper just kept shooting. Clark stared at the photos. The blood drained from his cheeks. He had expected many things, but not this cold-bloodedness. He had to get back to Bedford. Every minute counted now. Richard laid a hand on his arm. Is there anything else I can do, son? Tell me. I’m not too old for this mess yet. Clark nodded silently. The old man could be counted on, then as now. Come with me to Bedford, he suggested, even though it was technically his case. I’d love to, my boy. Richard shook his head weakly. But I can’t leave this place. The old pump is giving out. That heart attack the other day. the doctor says if I don’t take it easy, I’ll be pushing up daisies soon. That’s why these paws of mine are still shaking so much. I can advise you from here, Clark. But as for Bedford, I’m just too weak right now. You understand, don’t you? Richard looked at him earnestly. Clark nodded. “It was too much to hope for anyway. But I’ll manage.” He took the photos along with the negatives, squeezed Richard’s hands in gratitude, and headed back to Bedford. By now, it was noon, and someone had pinned a large note to his apartment door. Where are you, Clark? Mr. McAllroy and I are looking for you desperately. The Crown has already filed an indictment against Edgar with the court. The trial begins tomorrow. Get in touch! The signature had been hastily scribbled: Liz.";
+  utterance = new SpeechSynthesisUtterance(text);
+
+  const voices = window.speechSynthesis.getVoices();
+  const maleVoiceNames = [
+    "Microsoft David",
+    "Microsoft George",
+    "Google UK English Male",
+    "Google US English Male",
+    "en-us-x-sfg-local",
+    "en-gb-x-rjs-local",
+    "Ravi",
+    "Daniel",
+  ];
+
+  let selectedVoice = voices.find(
+    (voice) =>
+      voice.lang.startsWith("en") &&
+      maleVoiceNames.some((name) => voice.name.includes(name)),
+  );
+
+  if (!selectedVoice) {
+    selectedVoice = voices.find((voice) => voice.lang.startsWith("en"));
+  }
+
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+  }
+
+  utterance.pitch = 0.75;
+  utterance.rate = 0.88;
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function stoppeVorlesen() {
+  window.speechSynthesis.cancel();
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = () =>
+    window.speechSynthesis.getVoices();
+}

@@ -1,0 +1,49 @@
+let utterance = null;
+
+function starteVorlesen() {
+  window.speechSynthesis.cancel();
+
+  const text =
+    "The teacup in Liz’s hand trembled. The tea had long since gone cold. Clark’s offer hung in the room like a heavy, suffocating weight. We have to accept it. There is no other way, no other salvation for Edgar, Liz murmured to herself. But the thought of asking Eyleen for permission made her throat tighten. Her mother would block it—instantly. Only yesterday, the terror had pierced her to the bone. A piercing shriek had startled Midland Road. The newspaper boy had run down the street with the freshly printed sheets, carrying the headline like a burning torch. Liz had fetched the paper barefoot from the threshold. The newsprint was still sticky on her thumbs as she burst into the living room. At the sight of the large, bold letters, Eyleen's face had instantly turned ashen. Breathing became difficult for her, a rattling in her chest. Then her mother’s fingers clawed into the fabric over her heart, her eyes rolled back, and she simply crumpled, a dull thud upon the worn floorboards. Liz functioned. Purely on instinct, she ripped the cushions from the sofa and propped them under Eyleen’s legs, while simultaneously dipping a towel into the ice-cold water of the washbasin. The wet linen was already slapping against the forehead of the unconscious woman when Liz ran to the window. In a flash, she flung open the wooden frames, leaning out so far that the wind whipped against her face. A doctor! she screamed into the alley, her voice on the verge of breaking. Quickly, we need a doctor! Helplessness burned in Liz’s chest. They didn’t own a telephone. There was no apparatus hanging on their wall promising rescue at the push of a button. For such a luxury, the pennies from the sewing shop were nowhere near enough; every single penny went toward rent and bread. Yet fate took pity. Doctor Lindsey was standing down on the pavement, holding the hand of his little daughter, who tightly clutched a wooden doll. He looked up, his brow furrowing deeply. Then he let go of the child’s hand and took the steps of the narrow stairwell at a run. By the time his heavy boots clattered through the apartment door, Eyleen was already opening her eyes again. The doctor listened to her heart, felt her pulse, tapped her eyelids, and finally helped her to her feet. Nothing serious, just the shock, he explained with relief. Hardly had the door clicked shut behind the doctor when there was no holding Eyleen back. She had to check on Edgar this very instant. Liz had tried to grab her coat, had begged to go along, but her mother had banished her to her place with a single, icy glare. Someone had to stay here in case the police came, or Edgar himself. Liz stared at the cold tea leaves in the here and now. If Eyleen found out who their savior was supposed to be, her heart would stop again. Out of pure, wounded pride. Clark was the exact man who, just two days ago, had stood deferentially at her door and pleaded for a meeting. Eyleen had treated him like a mangy stray dog, berating him in a shrill voice and slamming the front door in his face. The humiliation ran deep. Their mother would rather perish than accept help from this man. That could not be allowed to happen, not for Edgar's sake, whose life was now on the line. Edgar was Eyleen’s everything. He always had been. Liz knew this, she felt the injustice in her bones every single day, and yet her love for her brother was stronger than any jealousy. She had to decide for them all now. Alone. Liz stepped up to the small worktable, dipped her quill into the inkwell, and hastily scratched a few lines onto a piece of paper. She folded it carefully. Then she walked to the door, cracked it open, and looked out. There he was. Yesterday’s newspaper boy was just walking past below again, his cap pulled low over his face, his hands buried in his pockets. He was perhaps ten years old, no older. Liz gave a short whistle, waved him over, and waited until he came clattering up the steps. She pressed the note into his small, dirty hand. To Clark Rudney, she whispered, her eyes casting a fleeting glance toward the stairs. Take it straight to him. She reached into the pocket of her apron, pulled out three heavy copper pennies, shoved them deep into the boy's jacket pocket, and patted his shoulder. He nodded eagerly, spun around, and vanished. Liz closed the door, breathed in the stale air of the apartment, and sat back down to her needlework.";
+  utterance = new SpeechSynthesisUtterance(text);
+
+  const voices = window.speechSynthesis.getVoices();
+  const maleVoiceNames = [
+    "Microsoft David",
+    "Microsoft George",
+    "Google UK English Male",
+    "Google US English Male",
+    "en-us-x-sfg-local",
+    "en-gb-x-rjs-local",
+    "Ravi",
+    "Daniel",
+  ];
+
+  let selectedVoice = voices.find(
+    (voice) =>
+      voice.lang.startsWith("en") &&
+      maleVoiceNames.some((name) => voice.name.includes(name)),
+  );
+
+  if (!selectedVoice) {
+    selectedVoice = voices.find((voice) => voice.lang.startsWith("en"));
+  }
+
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+  }
+
+  utterance.pitch = 0.75;
+  utterance.rate = 0.88;
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function stoppeVorlesen() {
+  window.speechSynthesis.cancel();
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = () =>
+    window.speechSynthesis.getVoices();
+}

@@ -1,0 +1,49 @@
+let utterance = null;
+
+function starteVorlesen() {
+  window.speechSynthesis.cancel();
+
+  const text =
+    "The road seemed endless. Civilization bogged down in the mud. Behind him, the lights of Bedford faded, while ahead the darkness of Chicksands Wood loomed like a massive, black wedge on the horizon. The wind lashed through the branches of the old oaks. It smelled of damp earth, decaying leaves, and the crisp, resinous chill of the nearby coniferous forest. Somewhere in the distance, the deep, rhythmic hum of machinery drifted over—the outposts of the military base, lying like a sleeping beast in the thicket. The ground softened beneath Clark’s feet. Deep ruts, filled with rainwater, cut into the forest track. Then it emerged: the forester’s lodge. It stood isolated in a small clearing. A squat building of dark brick, its roof pulled low, almost completely overgrown with ivy. The windowpanes stared back at him, black and lifeless. There was no police tape here, nor any tire tracks in the mud outside the door. None of it. The authorities did not even have this place on their radar. Clark stopped at the edge of the clearing, shaking out his exhausted legs. Then he walked toward the heavy wooden door and pressed the handle. But the door was locked. He took a step back and stared at the keyhole. A sinking feeling spread through the pit of his stomach. Was he going to break into a house? He was a social worker, damn it all, not a criminal. The law was his guiding principle. If they caught him here, his career would not just be over—he would end up in a cell right next to Edgar. The image of Edgar flashed into his mind. He saw him clearly, white as chalk, pleading with a trembling lower lip: I don't want to be hanged. The law wasn't helping Edgar right now. The law was already braiding the noose. Clark cursed silently. Morality was a luxury for people whose family wasn't on the verge of the gallows. He reached into his coat pocket. His fingers groped for the small notepad until they caught on the wire spiral. He bent the end back and tugged sharply until he held a piece of the stiff, thin wire in his hands. Back then, between cheap cigarettes and stolen liquor, his lads from the youth center in Luton had proudly shown him how to outsmart a simple lever lock. Just have to mimic the bit, Clarky. Turn it with feeling, Clark remembered. He knelt in the dirt before the door, his hands shaking with adrenaline. Carefully, he slid the bent wire into the cold keyhole. He felt for the resistance of the tumbler, but it slipped. Damn it, it wasn't as simple as he had thought. The wind howled in the treetops, mocking him. He exhaled deeply, focusing once more on his fingertips. A faint, metallic scraping could be heard, followed by a dull click. The door swung open a fraction. A rush of stale air struck him. It smelled of cold pipe tobacco, floor wax, and the musty dampness of a house suddenly robbed of its inhabitant. A breath of loneliness had already taken hold. Clark slipped inside and closed the door behind him. He didn’t dare turn on the lights. Instead, he switched on his small flashlight. The weak beam of light danced across the walls. He went about his search systematically. First, he examined the kitchen. There he found greasy pans and a bitten piece of bread that was already molding. But there were no papers. Next, he looked around the living room. Here stood a heavy wingback chair and a cast-iron stove containing nothing but grey ash. He pulled open drawers, rummaged through cupboards, and leafed through hunting magazines. Yet he found nothing. There was no hint of an argument, no promissory notes, no secret letters. Davies had led the life of a meticulous, boring recluse. By comparison, the chaos in the sawmill office seemed like something from another world. He climbed the creaking wooden stairs to the bedroom. The bed was unmade. On the nightstand stood a glass of water, dust gathering on its surface. Clark fluchte leise. Das Forsthaus war eine reine Sackgasse. Zehn Kilometer mühsamen Fußmarsch hatte er für nichts absolviert. Clark cursed quietly. The forester’s lodge was a complete dead end. He had completed a grueling ten-kilometer march on foot for nothing. He was about to turn away when the flashlight beam caught on the chest of drawers. Resting there was a heavy, mechanical camera. A German Leica, expensive and precise. It did not fit at all with the otherwise simple furnishings of the old forester. Clark picked up the camera body. The metal was cold. He turned it over and looked at the small window of the frame counter. It read number eight. Eight photos taken. What would a forester be photographing in these remote woods? With practiced movements,he had owned a darkroom himself in the past, he operated the rewind lever. The faint, whirring sound of the film sliding into the canister sounded like an alarm in the silence of the house. Clark opened the back panel, pulled out the small metal canister, and let it vanish into his coat pocket. He placed the camera back exactly as he had found it. After that, he fled the house. The lock clicked shut again without a hitch. The return journey to Bedford was pure agony. The rain had set in—a fine, needle-sharp downpour that left his face numb. His feet burned in his wet shoes. Yet the canister rested securely in his pocket. When he finally reached the cobbled surface of Ashburnham Road hours later, completely spent, only a single question burned inside him: What on earth could be on that film?";
+  utterance = new SpeechSynthesisUtterance(text);
+
+  const voices = window.speechSynthesis.getVoices();
+  const maleVoiceNames = [
+    "Microsoft David",
+    "Microsoft George",
+    "Google UK English Male",
+    "Google US English Male",
+    "en-us-x-sfg-local",
+    "en-gb-x-rjs-local",
+    "Ravi",
+    "Daniel",
+  ];
+
+  let selectedVoice = voices.find(
+    (voice) =>
+      voice.lang.startsWith("en") &&
+      maleVoiceNames.some((name) => voice.name.includes(name)),
+  );
+
+  if (!selectedVoice) {
+    selectedVoice = voices.find((voice) => voice.lang.startsWith("en"));
+  }
+
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+  }
+
+  utterance.pitch = 0.75;
+  utterance.rate = 0.88;
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function stoppeVorlesen() {
+  window.speechSynthesis.cancel();
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = () =>
+    window.speechSynthesis.getVoices();
+}

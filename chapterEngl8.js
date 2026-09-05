@@ -1,0 +1,49 @@
+let utterance = null;
+
+function starteVorlesen() {
+  window.speechSynthesis.cancel();
+
+  const text =
+    "He had no time to lose. Clark knew how the wheels of justice turned in the Kingdom. In the Bedford court system, it often took only a matter of weeks from a verdict to the thick noose—and the British Crown did not dither when it came to murder. He had asked his way around the post office, wearing down his heels on the rough cobblestones, until he finally stood before the unadorned door of Legal Aid. The anteroom smelled of damp tweed and the pungent, cold pipe tobacco that enveloped the room in a stifling haze. Clark presented his official ID from Luton. The green government seal was worn. He waited until the young receptionist with the faded curls finally waved him through. Mr McAllroy? Clark stepped forward, his hand outstretched. My name is Clark Rudney. I am a social worker. I spent years working in Luton, and I’ve recently moved here to Bedford. I’ve come regarding the Edgar Tyler case. It took a few seconds for McAllroy to emerge. He was buried behind two precariously leaning towers of yellowed case files that acted like barricades on his massive oak desk. On the dark wood, a heavy, smudged brass inkwell sat next to a clunky, black Post Office telephone. The lawyer wore a three-piece suit of heavy, dark gray wool tweed, its elbows reinforced with dark brown leather. His waistcoat was buttoned all the way up, the silver chain of a pocket watch disappearing into a small side pocket. His hand was cool, his handshake dry. He gestured vaguely toward a wooden chair, its cane seating already fraying at the edges. Edgar Tyler. McAllroy pronounced the name as if it left a bitter taste on his tongue. An eyebrow shot up. A bloody hot potato, young man. What exactly do you intend to do about it? The lawyer slid back in his leather chair. Fiddling with his heavy horn-rimmed spectacles, he reached for a gray wool cloth and began to buff the thick lenses. He then held them up against the dull light of the window, which looked out onto the wet shingles of Harpur Street. Blinking with slightly bloodshot eyes, he looked at Clark with impatience. Clark sat bolt upright. His arguments held ground. In the rough working-class neighborhoods of Luton, he had learned how to handle bureaucracy. As a public defender, you need backing. I know the procedure. Subpoena me as an official character witness. My word carries weight; the county judges respect my reports. I can demonstrate to the court who Edgar really is: his instability, his naivety. The boy is thoroughly good-natured, Mr McAllroy. He completely lacks the malicious intent or the criminal energy required for such a deed. Steady on! McAllroy cut him off. The spectacle lens clinked softly against the desk. The boy hasn't confessed to a damn thing. Do you understand? No statement, no evidence. Nothing but the loose chatter of the constables! Clark nodded slowly. He says he wasn't there. Not at the time of the crime. Of course he says that. McAllroy waved his glasses in the air before sliding them back onto his nose, hitting the deep, red indentation on the bridge perfectly. He swore it to me up and down in his cell last night. There was plenty of weeping and wailing, you can believe me on that. Clark paused. You’ve already been to the prison? Naturally, Rudney. What did you think I spend my days doing? Twiddling my thumbs? Well, that’s a relief, Clark murmured, feeling the tension drain from his shoulders. I merely thought. Mr Rudney. McAllroy leaned forward, resting his elbows on the wood. The cuffs of his white, starched shirt were slightly frayed at the edges. I have no objection to assistance. Quite the contrary. A trial like this is like a voyage on the high seas. There’s a heavy storm brewing out there right now, and the waves are crashing high. I need every hand on deck who can pull their weight. Do you follow me? He paused. With a harsh movement, McAllroy swept two bundles of files aside, kicking up a flurry of gray charcoal dust. He pulled a large, blank sheet of blotting paper toward himself, dipped a wooden dip pen into the deep brass well, and held it ready. Clark moved closer to the edge of the desk. Let’s look at the facts, McAllroy said, scratching a thick cross onto the paper. First: the body, Mr Davies. It’s over in pathology; the doctors are cutting it open as we speak. Second: the jacket. It was hanging directly on the chopping block in the sawmill. Edgar doesn’t deny it belongs to him. But he swears he left the premises at exactly one o'clock in the afternoon. After that, there’s nothing. No eyewitness. There is a gaping void until late in the evening. Not a soul saw him until he turned up back home. By that time, Davies was already long cold. The pen continued its frantic scratching. Third: the button, McAllroy continued, running a hand over his thinning, gray hair. A simple, cheap metal button from a pair of jeans. It was found in the sawdust, right in front of the large blade. What does that prove? It proves absolutely nothing. The thing could have been lying there for weeks. Every second tradesman, every farmer, and damn well every factory worker in Bedfordshire wears those blue denim trousers. That is everything, Rudney. Is that enough for the gallows? In my estimation, no. It’s not an airtight circumstantial case. It’s a structure riddled with holes like Swiss cheese. Clark stared at the hasty splatters of ink. What is your next step? McAllroy stood up abruptly, his chair scraping loudly across the uneven floorboards. He adjusted his tweed waistcoat and thrust a hand into his trousers pocket. It’s not about me. You wanted work, so you’re going to get some. Stir your stumps. Use that social worker’s eye of yours. I want to know who this Edgar is beneath the surface. What makes him tick? What troubles him? Was there an old grudge between him and Davies? Women? Coax everything out of him, Rudney. Write me a clean, ironclad report. We are going to need it bloody soon. Clark felt a spark of confidence. He nodded, reached for his soft felt cap, and took two steps toward the heavy wooden door. Rudney! McAllroy’s voice caught him at the threshold. The lawyer did not look up. He pulled at the silver chain, drew out his gold hunter watch, and clicked the button to check the time. I’ll look into his finances. If he was in debt, we’re in real trouble. Report back the moment you have something useful. In a bloody business like this, the prosecution doesn’t dawdle. The indictment will be on my desk sooner than we’d like. Clark stared at him. The word gallows seemed to hang invisibly in the air. He clapped a hand over his mouth, pressed the handle down, and stepped out into the drafty corridor, which smelled of floor polish.";
+  utterance = new SpeechSynthesisUtterance(text);
+
+  const voices = window.speechSynthesis.getVoices();
+  const maleVoiceNames = [
+    "Microsoft David",
+    "Microsoft George",
+    "Google UK English Male",
+    "Google US English Male",
+    "en-us-x-sfg-local",
+    "en-gb-x-rjs-local",
+    "Ravi",
+    "Daniel",
+  ];
+
+  let selectedVoice = voices.find(
+    (voice) =>
+      voice.lang.startsWith("en") &&
+      maleVoiceNames.some((name) => voice.name.includes(name)),
+  );
+
+  if (!selectedVoice) {
+    selectedVoice = voices.find((voice) => voice.lang.startsWith("en"));
+  }
+
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+  }
+
+  utterance.pitch = 0.75;
+  utterance.rate = 0.88;
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function stoppeVorlesen() {
+  window.speechSynthesis.cancel();
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = () =>
+    window.speechSynthesis.getVoices();
+}
