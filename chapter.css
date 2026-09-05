@@ -61,7 +61,12 @@ a * {
   display: inline-block;
   transform: skewX(20deg);
 }
-
+.jump {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+}
 .jump a {
   padding: 8px 12px;
   margin-bottom: 20px;
@@ -74,6 +79,39 @@ a * {
   font-size: 0.9rem;
 }
 
+button {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 7.5px;
+  cursor: pointer;
+  margin-right: 10px;
+  box-shadow: 2px 4px 2px 2px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.2s;
+  transform: scale(1);
+}
+.button:hover {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+.btn-start {
+  background-color: #2ecc71;
+  color: white;
+}
+.btn-start:hover {
+  background-color: #27ae60;
+}
+.btn-stop {
+  background-color: #e74c3c;
+  color: white;
+}
+.btn-stop:hover {
+  background-color: #c0392b;
+}
+.containerBtn {
+  max-width: 400px;
+  padding: 200px auto;
+}
 @media (min-width: 768px) {
   .container {
     margin: 5% 25%;
@@ -93,7 +131,10 @@ a * {
   a {
     padding: 10px 25px;
   }
-
+  .jump {
+    display: flex;
+    flex-direction: row;
+  }
   .jump a,
   .up a {
     padding: 5px 10px;

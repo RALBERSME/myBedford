@@ -12,13 +12,33 @@
       background-position: -55% 100%;
       background-size: 30cqmax;
     }
+    .jump a:last-of-type {
+      background-color: orangered;
+      color: white;
+      font-weight: bold;
+    }
+    .jump a:last-of-type:hover {
+      background-color: rgb(244, 244, 132);
+      color: orangered;
+    }
   </style>
   <body>
     <div class="container">
       <div class="jump">
         <a href="#down">nach unten springen</a>
+        <a href="chapterEngl1.html">➼ English Translation</a>
       </div>
+
+      <br />
       <h1 id="up">Kapitel 1: Ankunft in Bedford (1953)</h1>
+      <br />
+      <div class="containerBtn">
+        <h3>Lies mir den Text laut vor:</h3>
+        <br />
+
+        <button class="btn-start" onclick="starteVorlesen()">Start</button>
+        <button class="btn-stop" onclick="stoppeVorlesen()">Stopp</button>
+      </div>
       <br />
       <h3>
         Der Bus der United Counties Omnibus Company bog schwenkend in die
@@ -110,5 +130,7 @@
       </h3>
       <br /><a id="down" href="chapter2.html">zum nächsten Kapitel</a>
     </div>
+
+    <script src="chapter1.js"></script>
   </body>
 </html>
