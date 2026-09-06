@@ -87,6 +87,7 @@ marquee {
     margin-top: 15%;
     width: 100%;
     align-items: center;
+    padding: 15px 10px;
   }
 }
 @media (min-width: 968px) {
